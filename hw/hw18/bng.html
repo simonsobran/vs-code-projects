@@ -5,6 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binary Number Guessing</title>
+    <style>
+        * {
+            font-family: monospace;
+            background: black;
+            color: cyan;
+        }
+        .range-value, .container {
+            width: 20vw;
+            height: 30vh;
+            position: relative;
+            margin: 100px auto;
+        }
+    </style>
 </head>
 <body>
     <div class="range-value">
@@ -20,8 +33,7 @@
         <input type="number" placeholder="write num to guess" id="num-try">
         <input type="button" value="Try Number" id="btn-guesser">
         <span id="result-txt"></span>
-    </div>
-    <div class="log-txt">
+        <div class="log-txt"></div>
     </div>
     
     <script>
