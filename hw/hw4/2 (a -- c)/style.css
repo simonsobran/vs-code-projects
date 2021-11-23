@@ -1,0 +1,15 @@
+* {
+    font-size: 128px;
+}
+div {
+    padding: 100px;
+}
+
+a {
+    padding: 10px 120px 10px 20px;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+}

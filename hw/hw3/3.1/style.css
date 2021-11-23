@@ -1,0 +1,28 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+a {
+    font-size: 16px;
+    font-family: monospace;
+    font-style: italic;
+    color: sandybrown;
+}
+p {
+    margin: 10px 0px 20px 15px;
+    padding: 10px 0px 20px 15px;
+}
+.serif {
+    font-family: serif;
+}
+
+.centered {
+    text-align: center;
+}
+
+.colored {
+    background-color: seagreen;
+    color: yellow;
+}

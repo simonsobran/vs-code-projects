@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script >
+        var Moshe = {
+            name: 'Moshe',
+            weight: 68,
+            height: 1.75,
+            BMI: 0,
+            calcBMI() {
+                this.BMI = this.weight / this.height ** 2;
+                return this.BMI; 
+            },
+        };
+        
+        var Dani = {
+            name: 'Dani',
+            weight: 52,
+            height: 1.90,
+            BMI: 0,
+            calcBMI() {
+                this.BMI = this.weight / this.height ** 2;
+                return this.BMI; 
+            },
+
+        };
+        var hBMI = {
+            name: '',
+            BMI: 0
+        };
+        Moshe.BMI = Moshe.calcBMI();
+        Dani.BMI = Dani.calcBMI();
+
+        if (Moshe.BMI > Dani.BMI) {
+            hBMI.name = Moshe.name;
+            hBMI.BMI = Moshe.BMI;     
+        } else if (Dani.BMI < Moshe.BMI) {
+            hBMI.name = Dani.name;
+            hBMI.BMI = Dani.BMI;
+        } else if (Moshe.BMI === Dani.BMI) {
+            console.log("Their BMI's are equal!");
+        } else {console.log("Oooops, something went wrong!")};
+
+        console.log(hBMI.name + ' have the highest BMI ' + hBMI.BMI);
+    </script>
+</body>
+</html>

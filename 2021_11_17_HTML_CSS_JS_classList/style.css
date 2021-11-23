@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+span {
+    background-color: blueviolet;
+    color: blanchedalmond;
+    height: 100px;
+    padding: 20px;
+    border: 1px solid orange;
+    margin: 20px;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.block {
+    display: block;
+}
+
+.to-hide, .not-to-hide, .visible, .not-visible, .opacity-0, .not-opacity-0 {
+    width: 300px;
+    height: 40px;
+    border: 2px solid gainsboro;
+}
+
+.yellow {
+    background: yellow;
+}
+.orange {
+    background: orange;
+}
+.purple {
+    background: purple;
+}
+.pink {
+    background: pink;
+}
+.to-hide {
+    display: none;
+}
+/* visibility: collapse - is used for tables */
+.not-visible {
+    visibility: hidden;
+}
+
+.opacity-0 {
+    opacity: 0.05;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Players Generation for Dangers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Estonia&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: fantasy;
+            padding: 20px;
+            text-align: center;
+            background-color: purple;
+            color: rgb(206, 176, 6);
+            font-family: 'Estonia', cursive;
+        }
+        h1 {
+            font-size: 32px;
+        }
+        div > p {
+            font-size: 24px;
+        }
+        .player {
+            text-align: start;
+            margin: 5px auto;
+            padding: 10px;
+            border: 1px solid rgb(100, 100, 100);
+            max-width: 49%;
+            min-width: 200px;
+            border-radius: 1%;
+        }
+        .ammo span {
+            background-color: rgb(27, 27, 255);
+        }
+        #start-game {
+            background-color: gold;
+            display: block;
+            margin: 10px auto;
+            padding: 8px;
+            font-family: 'Estonia', cursive;
+            font-size: 28px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Players Generation for Dangers</h2>
+    <label for="num-players">Enter the number of players</label>
+    <input type="number" id="num-players">
+    <input type="submit" id="gen-players" value="Generate players">
+    <!-- <div class="player player-0">
+        <label for='pl-name-0'>Change Player's name:</label>
+        <input type='text' id='pl-name-0' value='player0 name will be'>
+        <p class='granades'>Granades ammout: <span>5</span></p>
+        <p class='ammo'>Ammo ammout: <span>25</span></p>
+    </div> -->
+    
+    <button id="start-game">Start Game</button>
+    <script>
+        var players = [], numPlayers = 0, minGranades = 4, maxGranades = 12, minAmmo = 100, maxAmmo = 300;
+        var inpNumPlayers = document.querySelector('#num-players');
+
+        function randomizer(min, max) {
+            return Math.floor(Math.random() * (max-min+1)) + min;
+        }
+
+        function addPlayer(n) {
+            var newPlayer = {
+                plName: 'player' + n,
+                granades: randomizer(minGranades, maxGranades),
+                ammo: randomizer(minAmmo, maxAmmo),
+                isAlive: true,
+                getNewName: function() {
+                    var inpName = document.querySelector('#pl-name-' + n);
+                    this.plName = inpName.value;
+                    inpName.disabled = true;
+                }
+            }
+            var newPlayerDiv = document.createElement('div');
+            newPlayerDiv.className = "player player-" + n;
+            
+            newPlayerDiv.innerHTML = "<label for='pl-name-"+n+"'>Change Player Name: </label><input type='text' id='pl-name-"+n+"' value='"+newPlayer.plName+"'><p class='granades'>Granades: <span>"+newPlayer.granades+"</span></p><p class='ammo'>Ammo: <span>"+newPlayer.ammo+"</span></p>";
+            
+            document.body.append(newPlayerDiv);
+            
+            newPlayer.divEl = newPlayerDiv;
+
+            return newPlayer;
+        }
+
+        function startGame() {
+            for (var i = 0; i < numPlayers; i++) {
+                players[i].getNewName();
+            }
+            //continue the game
+        }
+        document.querySelector('#gen-players').addEventListener('click', function() {
+            numPlayers = inpNumPlayers.value;
+            for (var i = 0; i < numPlayers; i++) {
+                players.push(addPlayer(i));
+            }
+            console.log(players);
+        });
+
+        document.querySelector('#start-game').addEventListener('click', startGame);
+    </script>
+</body>
+</html>

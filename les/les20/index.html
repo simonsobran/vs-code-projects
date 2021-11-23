@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            border: 2px dotted black;
+        }
+        .first, .second {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: darkcyan 1px solid;
+            margin: 15px;
+        }
+        .first {
+            background: darkmagenta;
+        }
+        .second {
+            background: darkorange;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="first"></div>
+        <div class="second"></div>
+        <button>Remove divs</button>
+    </div>
+    
+    <script>
+        var divEl = document.querySelector('.container');
+        var firstEl = document.querySelector('.first');
+        var secondEl = document.querySelector('.second');
+        var arr = [-1.4, 34, 55, 0]
+        arr.color = 'black';
+        arr.taste = 'pink shrimp';
+       
+        // arr.forEach(function(el){
+        //     var num = el ** 6.5;
+        //     console.log(el);
+        //     console.log(num);
+        // });
+        
+        // var arr2 = []
+        // arr.forEach(function(el) {
+        //     arr2.push(el+10)
+        // });
+        // console.log(arr2);
+        // var arr3 = ['pizza','sushi',false,true,'soup'];
+        // arr3.forEach(function(el) {
+        //     console.log(String(el).slice(0,3));
+        // });
+        
+        // Mission: capitalize all the words in 
+        // var arr5 = ['piZza','sUSHI','porrige','buckleWHeat','SOUP'];
+        // arr5.forEach(function(el, i) {
+        //     arr5[i] = `${el.toUpperCase()}${el.slice(1).toLowerCase()};
+        //     console.log(arr5);
+        // });
+        // var arr6 = ['grey', 'black', 'blue', 'yellow', 'pink'];
+        // arr6.forEach((el, i, ar) => {
+        //     console.log(ar.slice(0,i+1));
+        // });
+        // arr.forEach(function(el, i) {
+        //     arr[i] = el ** 2;
+        // });
+        // console.log(arr);
+// Mission: go over the array arr and add the index to the
+// current  element - use the third parameter
+        var arr6 = ['grey', 'black', 'blue', 'yellow', 'pink'];
+        console.log(arr6);
+        arr6.forEach((el, i, ar) => {
+            // console.log(i);
+            ar[i] = el + i;
+        });   
+        console.log(arr6);
+
+        // document.append(arr);
+        // для перформанса лучше display none | oppacity 0 | visibility hidden
+        // document.querySelector('button').addEventListener('click', function(){
+        //     divEl.removeChild(firstEl);
+        //     divEl.removeChild(secondEl);
+        // });
+    </script>
+</body>
+</html>

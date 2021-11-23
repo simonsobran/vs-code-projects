@@ -1,0 +1,30 @@
+בדיחה - бдиха - шутка, анекдот
+טיל - тиль - ракета
+בטיל - бетиль - быстро(как ракета) - слэнг
+פשלה - фашла - косяк
+
+PORTFOLIO IDEAS
+***************
+
+hw14 - toggle classes with colors
+*********************************
+
+className vs classList
+
+CSS relative and absolute units
+************************
+px vs % vs vw,vh
+
+CSS display
+************
+diplay     : inline, inline-block, block, none
+visibility : hidden (collapse - is for tables)
+opasity    : 0
+
+hidden elements
+
+Collapse, meaning that it doesnt’t take up any space on the page.
+Respond to events, e.g. a click.
+Be included in the taborder, meaning it will receive focus when using the tab key.
+Be animatable, meaning that you can animate the transition between the visible and hidden state of the element.
+

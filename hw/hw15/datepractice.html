@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let today = new Date();
+        var Moshe = {
+            name: 'Moshe',
+            birthYear: 1996,
+            birthMonth: 10,
+            birthDay: 19,
+            exactAge: 0
+        }
+        var Dani = {
+            name: 'Dani',
+            birthYear: 1987,
+            birthMonth: 10,
+            birthDay: 1,
+            exactAge: 0
+        };
+        function calcAge(name) {
+            if (today.getFullYear() >= name.birthYear){
+                if (today.getMonth() + 1 === name.birthMonth) {
+                    if (today.getDate() >= name.birthDay) {
+                        name.exactAge = today.getFullYear() - name.birthYear;
+                        return name.exactAge;
+                    }   else {
+                            name.exactAge = today.getFullYear() - name.birthYear - 1;
+                            return name.exactAge;
+                        }
+                }
+                if (today.getMonth() + 1 > name.birthMonth) {
+                    name.exactAge = today.getFullYear() - name.birthYear;
+                    return name.exactAge;
+                }
+                if (today.getMonth() + 1 < name.birthMonth) {
+                    name.exactAge = today.getFullYear() - name.birthYear - 1;
+                    return name.exactAge;    
+                }
+            }
+        }
+        Moshe.exactAge = calcAge(Moshe);
+        console.log(Moshe.exactAge);
+        console.log(Moshe);
+        Dani.exactAge = calcAge(Dani);
+        console.log(Dani.exactAge);
+        console.log(Dani);
+    </script>
+</body>
+</html>

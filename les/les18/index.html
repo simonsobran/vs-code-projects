@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        span {
+            background-color: blueviolet;
+            color: blanchedalmond;
+            height: 100px;
+            padding: 5px;
+            border: 13px solid rgba(255, 166, 0, 0.493);
+        }
+        .inline-block {
+            display: inline-block;
+        }
+        .block {
+            display: block;
+        }
+        .to-hide, .not-to-hide {
+            width: 300px;
+            height: 40px;
+            border: 2px solid grey;
+        }
+        /* .to-hide {
+            display: none;
+        } */
+        .yellow {
+            background: yellow;
+        }
+        .orange {
+            background: orange;
+        }
+        .purple {
+            background: purple;
+        }
+        .blue {
+            background: pink;
+        }
+    
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor <span class="block">sit amet consectetur adipisicing elit.</span>  Qui dolorem fugit quisquam, commodi voluptates perspiciatis architecto earum placeat asperiores, corporis praesentium assumenda ipsam illo aspernatur. Voluptatem enim dolor maxime minus?</p>
+    <p>Lorem ipsum dolor <span class="inline-block">sit amet consectetur adipisicing elit.</span>  Qui dolorem fugit quisquam, commodi voluptates perspiciatis architecto earum placeat asperiores, corporis praesentium assumenda ipsam illo aspernatur. Voluptatem enim dolor maxime minus?</p>
+
+    <div class="to-hide yellow"></div>
+    <div class="not-to-hide orange"></div>
+    <div class="to-hide purple"></div>
+    <div class="not-to-hide blue"></div>
+    <script>
+
+    </script>
+</body>
+</html>

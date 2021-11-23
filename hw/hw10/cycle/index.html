@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {font-size: 20px; padding: 0; margin: 10px;}
+        small { font-style: italic; color: red;}
+        body {font-family:monospace;}
+        body {padding: 0% 0; margin: 3% 15%;}
+        #submit {font-size: 30px; padding: 3%; border-radius: 5%; background-color:turquoise;}
+        #submit:hover {background-color: rgb(245, 245, 245); cursor: pointer; font-size: 64px;}
+        #submit:active {background-color: rgb(78, 90, 196); cursor:grab; font-size: 128px;}
+        /* :hover это псевдокласс на тему события */
+    </style>
+</head>
+<body>
+    <label for="bill" id="billLabel">Enter bill 1st Bill</label><br>
+    <input type="number" id="bill" oninput=clearErr()><br>
+    <small id="err"></small><br>
+    <input type="submit" id="submit" value="Calculate tip" onclick=calculateTip()>
+
+    <script>
+        var billLabel = document.getElementById('billLabel');
+        var billInput = document.getElementById('bill');
+        var submitBill = document.getElementById('submit');
+        var errText = document.getElementById('err');
+        var cnt = 1, maxTimes = 3;
+
+        var tips = [];
+        var billsWithTips = [];
+
+        function calculateTip() {
+            var bill = +billInput.value;
+            if (bill <= 0) {
+                errText.innerText = 'An error has occured. Goodbye';
+                return;
+            }
+
+            if (bill < 50) {
+                tips.push(round2two(bill * 0.2));
+            } else if (round2two(bill < 200)) {
+                tips.push(round2two(bill * 0.15));
+            } else tips.push(round2two(bill * 0.1));
+            
+            billsWithTips.push(round2two(bill) + tips[tips.length-1]);
+            console.log(tips);
+            console.log(billsWithTips);
+            if (cnt >= maxTimes) {
+                cnt = 1;
+                tips = [];
+                billsWithTips = [];
+            } else {
+                cnt++;
+            }
+            billLabel.innerText = 'Enter bill ' + cnt + ' bill:';
+            billInput.value = '';
+            submitBill.value = 'do the math for ' + cnt + 'bill';
+        }
+        function clearErr() {
+            errText.innerText = '';
+        }
+        function round2two(num) {
+            return (Math.round(num*100))/100;
+        }
+        /*** PRACTICE
+         * 
+         * David created a function for a tip calculation: when the bill is less than 50$, he wants to tip 20%, 15% when the bill is between 50 and 200, otherwise 10%.
+        Eventually he should have 2 arrays – one of the tips and one of the final payed amounts: bills + tips.
+        The bills that he payed in the last three restaurants were 305$, 44$ and 68$.
+        Your program should have the function and end up with the described arrays.
+
+        */
+
+       // var cities = ['Jerusalem','Rechovot','Tel-Aviv','Petach-Tikva','Haifa','Beer-Sheva','Ashdod','Asquelon','Safed','Kiriat-Shmona','Eilat'];
+        // var langs = ['Russian','English','German','Hebrew'];
+
+        // cities.pop(); //выкидывает значения с конца
+        // var poppedCitie = cities.pop(); // .pop возвращает значение выкинутого массива
+        // cities.push('Ayanot'); //добавляет элемент в конец массива
+        // cities.unshift('Netania'); //добавляет элемент в начало массива
+        // cities.shift('Netania'); //удаляет элемент из начала массива
+
+
+        // function logEle(arr) {
+        //     for (var i = 0; i < arr.length; i++)
+        //         console.log(arr[i]);
+        // }
+        // logEle(cities);
+        // console.log(removedFromEnd);
+    </script>
+</body>
+</html>

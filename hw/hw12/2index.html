@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var weights = [55, 64, 59, 75, 91, 68];
+        var heights = [163, 155, 168, 173, 175, 170];
+        var names = ['Shlomit','Yosi','Dani','Noa','Limor','Adi'];
+        var BMIs = [];
+
+        for (var i = 0; i < weights.length; i++) {
+            BMIs[i] = BMI(weights[i], heights[i]);
+            console.log("BMI " + names[i] + " = " + BMIs[i]);
+        }
+
+        function BMI(weights, heights) {
+            return weights / (heights * 0.01) ** 2;
+        }
+        // console.log(BMI(weights[2], heights[2]));
+    </script>
+</body>
+</html>

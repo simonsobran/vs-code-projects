@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+    <style>
+        * {
+            font-size: 32px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h3 id="result"> 
+        <span id="span-a">Side A is 0</span>, &nbsp;
+        <span id="span-b">Side B is 0</span>, &nbsp;
+        <span id="span-c">Side C is 0</span> &nbsp;
+        This is <span id="span-result">no</span> Triangle
+    </h3>
+    <input type="Triangle A side" id="a" onblur="setAll('a')" placeholder="0">
+    <input type="Triangle B side" id="b" onblur="setAll('b')" placeholder="0">
+    <input type="Triangle C side" id="c" onblur="setAll('c')" placeholder="0">
+    <input type="submit" value ="Check triangle" onClick=setResult()>
+
+    <script src="index.js"></script>
+</body>
+</html>

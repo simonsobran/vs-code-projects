@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endless Dangers</title>
+</head>
+<body>
+    
+    <script>
+        var ammoDani = 140;
+        var grDani = 4;
+        var daniIsAlive = true;
+        var gameFlow = ['dragons','dragons','dragons','dragons','carriage','carriage']; 
+        
+        function dragon(draco) {
+            for (var i = 1; i <= draco; i++){
+                if (ammoDani >= 4) {
+                    ammoDani = ammoDani - 4;
+                } else {
+                    grDani = grDani - 1;
+                    }
+                if (ammoDani >= 0 || grDani >= 0) {
+                    daniIsAlive = true;
+                    return daniIsAlive;
+                } else {
+                    daniIsAlive = false;
+                    return daniIsAlive;
+                    }
+                }
+            }
+        function hostileCarriage() { 
+            if (grDani >= 2) {
+                grDani = grDani - 2;
+                if (Math.random >= 0.5) {
+                    daniIsAlive = true;
+                    return daniIsAlive;
+                }
+            } else {
+                daniIsAlive = false;
+                return daniIsAlive;
+            }
+        }
+        
+        function gameScenario(enemy, dragonsAmount) {
+            if (daniIsAlive) {
+                if (enemy === 'dragons') { // добавить проверку на dragonsAmount true
+                    return dragon(dragonsAmount);
+                } else {
+                    return hostileCarriage();
+                    }
+            } else {
+                return daniIsAlive;
+            }
+        }
+
+        for(var i = 0; i <= gameFlow.length; i++) {
+            if (gameFlow[i] === 'dragons') {
+                gameScenario(gameFlow[i], Math.floor(Math.random()*8));
+            } else {
+                gameScenario(gameFlow[i], null);
+                }
+        }
+        //потенциально можем вызвать функцию gameScenario('dragons', null) и функция dragons выдаст неверное значение
+    </script>
+</body>
+</html>

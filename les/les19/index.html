@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons and Letters</title>
+    <style>
+        div {
+            border: 4px solid rgb(0, 5, 12);
+            max-width: 48vh;
+            border-radius: 1%;
+            margin: 15vh auto;
+            background: #FFFFFF;
+            background: -moz-linear-gradient(-45deg, #FFFFFF 0%, #1C6EA4 100%, #C59237 100%);
+            background: -webkit-linear-gradient(-45deg, #FFFFFF 0%, #1C6EA4 100%, #C59237 100%);
+            background: linear-gradient(135deg, #FFFFFF 0%, #1C6EA4 100%, #C59237 100%);
+        }
+        button {
+            font-size: 6vh;
+            margin: 4px;
+            padding: 4px;
+            background: #FFFFFF;
+            background: -moz-radial-gradient(center, #FFFFFF 0%, #0d94ee 100%, #C59237 100%);
+            background: -webkit-radial-gradient(center, #FFFFFF 0%, #0d94ee 100%, #C59237 100%);
+            background: radial-gradient(ellipse at center, #FFFFFF 0%, #0d94ee 100%, #C59237 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="letters">
+
+    </div>
+    <script>
+        var letters = {}, letter;
+        var newEl = document.createElement('button');
+        var divEl = document.querySelector('.letters');
+
+        // newEl.innerText = 'A';
+        // document.body.append(newEl);
+        // newEl = document.createElement('button');
+        // newEl.innerHTML = '<strong>A</strong>';
+        // document.body.append(newEl);
+
+        // go over uppercase eng letters
+        for (var i = 65; i <= 90; i++) {
+            // console.log(String.fromCharCode(i));
+            buttonmaker(i);
+        }
+        function buttonmaker(code) {
+            newEl = document.createElement('button');
+            letter = String.fromCharCode(code);
+            newEl.innerText = letter;
+            divEl.append(newEl);
+            // letters['color']; or letters.color
+            letters[letter] = { btnEl: newEl, used: false};
+        }
+
+        // template string - the way to concate strings
+        // `` - "backticks"
+        // `${}` - insidethere are variables and calculations
+
+        str = 'sting';
+        word = 'a word';
+        console.log(`This is a quote from ${str}: ${word.toUpperCase()} is a pretty important thing`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+}
+
+.container {
+    background: whitesmoke;
+    max-width: 900px;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+/* vw - viewport width
+1vw ~ 1% window width
+1vw > 1%
+vh - viewport height
+1vh = 1% window height
+*/
+.hangman-pic {
+    position: relative;
+    /* vw and vh relative to the direct parent */
+    width: 80%;
+    height: 60vh;
+    /* % relative to the direct parent */
+    /* width: 50%;
+    height: 60%; */
+    /* width: 500px;
+    height: 600px; */
+    left: 10%;
+    margin: 0 auto;
+    border: 2px dashed orangered;
+    box-shadow: inset 2px 5px 5px violet;
+}
+
+.hangman-pic div {
+    position: absolute;
+}
+
+.stick {
+    background: cornflowerblue;
+}
+
+.vertical {
+    width: 4%;
+    height: 85%;
+    left: 10%;
+    bottom: 10%;
+}
+
+.horizontal {
+    width: 4%;
+    height: 85%;
+    transform: rotate(90deg);
+    top: -30%;
+    left: 30%;
+}

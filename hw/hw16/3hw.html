@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-size: 48px;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        var alphabet = "abcdefghijklmnopqrstuvwxyz";
+        var spAl = alphabet.split('');
+        console.log(spAl);
+        console.log(spAl.join(", "));
+
+        document.querySelector('body').innerHTML = "this is a string before transformation " + alphabet + "<br>" + "<hr>" + "this is a string after JS magic " + spAl.join(", ");
+        // document.querySelector('body').innerHTML = "this is a string " + spAl.join(", ");
+    </script>
+</body>
+</html>

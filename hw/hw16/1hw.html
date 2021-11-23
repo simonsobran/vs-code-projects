@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 24px;
+        }
+        .red {
+            color:red;
+        }
+        .fantasy {
+            font-family: fantasy;
+            font-size: 7vh;
+        }
+        .daily {
+            font-family: monospace;
+            font-size: 9vh;
+        }
+    </style>
+</head>
+<body>
+    <button class="red">Big Bidness Button</button>
+    <button id ="fansy" class="fantasy">Fantastic ButtoOoOoOoooOOoooOoon</button>
+
+    <script>
+       var btn1 = document.querySelector('.red');
+       btn1.addEventListener('mouseover', function(){
+            btn1.style.fontSize = Math.random() * 128 + 'px'; 
+       });
+       btn1.addEventListener('click', function(){
+            btn1.classList.toggle('red'); 
+       });
+       
+       var btn2 = document.querySelector('#fansy');
+       btn2.addEventListener('click', function(){
+            if (btn2.classList.contains('fantasy')) {
+                btn2.classList.replace('fantasy', 'daily');
+            } else {
+                btn2.classList.replace('daily', 'fantasy');
+            }
+       });
+
+
+    </script>
+</body>
+</html>

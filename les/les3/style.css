@@ -1,0 +1,29 @@
+*   {
+    margin: 40px;
+}
+
+html {
+    background-color: fuchsia;
+}
+body {
+    background-color: pink;
+    color: teal;
+}
+p {
+    font-size: 196px;
+}
+.other_color {
+    color: blueviolet;
+    padding: 50px 0px 50px 150px;
+    line-height: 30px;
+}
+
+.other_back {
+    background-color: blanchedalmond;
+    text-align: center;
+}
+
+h2 {
+    border: 40px groove;
+    border-color: rgb(33, 54, 15);
+}

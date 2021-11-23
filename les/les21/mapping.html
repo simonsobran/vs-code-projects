@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // var numbers = [-4, 5, 10, 7, 4];
+
+        // console.log(numbers);
+        // var numSqs = numbers.map(function(el) {
+        //     return el * el;
+        // }); 
+        
+        // console.log(numSqs);
+
+        //
+        // var persons = [
+        //     {firstname : "Malcom", lastname: "Reynolds"},
+        //     {firstname : "Kaylee", lastname: "Frye"},
+        //     {firstname : "Jayne", lastname: "Cobb"}
+        // ];
+        
+        // var fullNames = persons.map(function(person) {
+        //     return `${person.firstname} ${person.lastname}`
+        // });
+        // console.log(fullNames);
+
+        // var meals = ['batata', 'falafel', 'shuarma', 'lazania', 'tchina', 'hummus'];
+
+
+        // console.log(meals.map(function(meal, idx){
+        //     // return idx + 1 + '. ' + meal;
+        //     return `${idx + 1}. ${meal}`;
+        // }));
+
+        // console.log(meals.map(function(meal, idx){
+            
+        //     return `${idx + 1}. ${meal}`;
+        // }));
+        // console.log(meals.join('\n'));
+
+        var testCases = [[1,2,3], [7,6,4,8], [], [20], [4,-5,-8],[5,-12]];
+        var expected = [[2], [6,4,8], [], [20], [4,8], [-12]];
+        function onlyEvenValues(ar) {
+            var newAr = [];
+            ar.forEach(function(el){
+                if(el % 2 === 0) newAr.push(el);
+            })
+            return newAr;
+        }
+        function tester(allInputs, expectedOutputs) {
+            allInputs.forEach(function(input, i){
+                console.log(`input=`, input)
+                // console.log(`output=`, onlyEvenValues(input))
+                var output = onlyEvenValues(input).join(',');
+                if (output === expectedOutputs[i].join(',')) {
+                    console.log(true);
+                } else console.log(false);
+            })
+        }
+
+        tester(testCases, expected);
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Number Guessing</title>
+</head>
+<body>
+    <div class="container">
+        <label for="#num-try">Guess the number</label>
+        <input type="number" placeholder="write num to guess" id="num-try" maxlength="3">
+        <input type="button" value="Try Number" id="btn-guesser">
+        <span id="result-txt"></span>
+    </div>
+    <div class="log-txt">
+    </div>
+    
+    <script>
+        var guessNum = Math.floor(Math.random()*100 +1);
+        var cnt = 0;
+        console.log(guessNum);
+        
+        document.querySelector('#btn-guesser').addEventListener('click', function(){
+            var numTry = document.querySelector('#num-try').value;
+            var resultTxt = document.querySelector('#result-txt').innerText;
+            var btn = document.querySelector('#btn-guesser');
+            
+            if (numTry == '' || numTry == null || numTry == 0 || numTry < 0) {
+                document.querySelector('.log-txt').innerHTML = "Please, put nice numbers from 1 to 100 in this input!"
+            } else {
+                cnt++;
+                // console.log(numTry);
+                if (cnt === 9) {
+                    btn.disabled = true;
+                    resultTxt = "You run out of tries, much sad"
+                } else {
+                    if (numTry == guessNum) {
+                        resultTxt = "your victory!!";
+                        btn.disabled = true;
+                        } else {
+                        resultTxt = "Don't worry, try again. You have " + cnt + " tries left.";
+                        }
+                        // console.log(cnt);
+                    if (numTry < guessNum) {
+                            resultTxt = "Guessed Number more then you typed";
+                        }
+                    if (numTry > guessNum) {
+                            resultTxt = "Guessed Number less then you typed";
+                        }  
+                    document.querySelector('.log-txt').innerHTML = `<p>Your ${cnt} try is number ${numTry} and it is ${resultTxt} </p>`;
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>

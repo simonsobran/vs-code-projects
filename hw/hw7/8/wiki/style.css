@@ -1,0 +1,33 @@
+* {
+    font-family: 'Zen Kurenaido', sans-serif;
+}
+div {
+    margin: 18px 0px 9px 0px;
+    padding: 6px 2px;
+}
+header {
+    background-color: cornsilk;
+}
+main {
+    background-color: blanchedalmond;
+}
+
+.img-n-contents{
+    border: 1px rgba(0, 0, 0, 0.288) solid;
+}
+
+blockquote {
+    font-size: 24px;
+    font-family: fantasy;
+}
+li {
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tableOfContent {
+    font-family: monospace;
+}
+.finnsAbout {
+    font-size: 18px;
+}

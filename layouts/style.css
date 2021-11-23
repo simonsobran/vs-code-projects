@@ -1,0 +1,206 @@
+/********************************/
+/***         General          ***/
+/********************************/
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+	width: 100%;
+}
+main {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+a { text-decoration: none}
+.wiki-desc {
+	display: block;
+	max-width: 25vw;
+	height: 15vw;
+	position: relative;
+}
+
+/********************************/
+/***  The Rectangle colors    ***/
+/********************************/
+
+.blue-jeans {
+	background: #57bfe1;
+}
+.medium-aquamarine {
+	background-color: #71f79f;
+}
+.sandy-brown {
+	background-color: #fc9f5b;
+}
+.maize {
+	background-color: #fff05a;
+}
+.paradise-pink {
+	background-color: #e7505a;
+}
+
+/********************************/
+/***    One Rectangle         ***/
+/********************************/
+
+.wiki-desc .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #ff0000;
+	height: 0;
+	width: 100%;
+	text-align: right;
+	transition: all 0.5s;
+}
+
+.wiki-desc:hover .overlay,
+.overlay:hover {
+	background-color: rgb(255,0,0,0.5);
+	height: 100%;
+}
+
+.description {
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 90%;
+	height: 90%;
+	position: absolute;
+	top: 5%;
+	left: 5%;
+}
+
+.rel {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+.click {
+	position: absolute;
+	margin-right: 0.5em;
+	bottom: 0;
+	right: 0;
+	display: none;
+}
+
+.overlay:hover .click { display: block; }
+
+.page-name,
+.whos-page,
+.click {
+	font-size: 1.5em;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.click {
+	color: gold;
+}
+
+/************************************/
+/***     Section FRAME            ***/
+/************************************/
+.frame-div {
+	height: 96vh;
+	width: 100%;
+    border: 2rem solid;
+    border-image: repeating-linear-gradient(45deg,#fe8059,#fe8059 60px,#fed36d 60px,#fed36d 100px,#68d487 100px, #68d487 160px,#498058 160px, #498058 210px,#46c6e3 210px, #46c6e3 270px, #30779d 270px/*,#30779d 290px*/) 20;
+}
+
+iframe {
+	width: 100%;
+	height: 100%;
+}
+
+.to-the-top:link,
+.to-the-top:visited {
+	margin: 1rem;
+	height: 4rem;
+	width: 12rem;
+	padding: 0.5rem;
+	color: #ddd;
+	background-color: #498058;
+	border-radius: 2px;
+	display: block;
+	font-size: 2rem;
+	text-align: center;
+	transition: all 0.3s;
+}
+
+.to-the-top:hover,
+.to-the-top:active {
+	background-color: #68d487;
+	color: #777;
+}
+/*-----------------------------------*/
+/* ANIMATIONS */
+/*-----------------------------------*/
+.js--wp-1,
+.js--wp-2,
+.js--wp-3 {
+	opacity: 0;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+}
+
+.js--wp-4 {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+}
+
+.js--wp-1.animated,
+.js--wp-2.animated,
+.js--wp-3.animated {
+	opacity: 1;
+}
+
+/* Rose */
+.rose {
+	background-image: url("../img/rose.jfif");
+}
+
+.rose .page-name,
+.rose .whos-page {
+	color: red;
+	position: absolute;
+}
+
+.rose .page-name {
+	transform: rotate(-45deg) translateX(20%);
+	top: 20%;
+	left: 20%;
+}
+
+.rose .whos-page {
+	transform: rotate(-25deg);
+	bottom: 15%;
+	right: 25%;
+}
+
+.goldenfish {
+	background-image: url("../img/rybka.jfif");
+}
+
+.goldenfish .page-name,
+.goldenfish .whos-page {
+	position: absolute;
+}
+.goldenfish .page-name {
+	transform: rotate(20deg);
+	top: 35%;
+	right: 2%;
+	color: rebeccapurple;
+}
+
+.goldenfish .whos-page {
+	transform: rotate(5deg);
+	bottom: 8%;
+	left: 1%;
+	color: #fff;
+}
