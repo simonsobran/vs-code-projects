@@ -7,8 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="square">
+
+    </div>
+
     <script>
+        var divEl = document.querySelector('.square');
+        var num = 90;
+        var str = '';
+        for (let j = 1; j <= num; j++) {
+            for (let i = 1; i <= num; i++) {
+                str +=i;
+            }
+            str += '\n';
+        }
+        divEl.innerText = str;
+            // console.log(str);
+        
         // var numbers = [-4, 5, 10, 7, 4];
 
         // console.log(numbers);
@@ -44,27 +59,33 @@
         // }));
         // console.log(meals.join('\n'));
 
-        var testCases = [[1,2,3], [7,6,4,8], [], [20], [4,-5,-8],[5,-12]];
-        var expected = [[2], [6,4,8], [], [20], [4,8], [-12]];
-        function onlyEvenValues(ar) {
-            var newAr = [];
-            ar.forEach(function(el){
-                if(el % 2 === 0) newAr.push(el);
-            })
-            return newAr;
-        }
-        function tester(allInputs, expectedOutputs) {
-            allInputs.forEach(function(input, i){
-                console.log(`input=`, input)
-                // console.log(`output=`, onlyEvenValues(input))
-                var output = onlyEvenValues(input).join(',');
-                if (output === expectedOutputs[i].join(',')) {
-                    console.log(true);
-                } else console.log(false);
-            })
-        }
-
-        tester(testCases, expected);
+        // var testCases = [[1,2,3], [7,6,4,8], [], [20], [4,-5,-8],[5,-12]];
+        // var expected = [[2], [6,4,8], [], [20], [4,8], [-12]];
+        // function onlyEvenValues(ar) {
+        //     var newAr = [];
+        //     ar.forEach(function(el){
+        //         if(el % 2 === 0) newAr.push(el);
+        //     })
+        //     return newAr;
+        // }
+        // function tester(allInputs, expectedOutputs) {
+        //     allInputs.forEach(function(input, i){
+        //         console.log(`input=`, input)
+        //         // console.log(`output=`, onlyEvenValues(input))
+        //         var output = onlyEvenValues(input).join(',');
+        //         if (output === expectedOutputs[i].join(',')) {
+        //             console.log(true);
+        //         } else console.log(false);
+        //     })
+        // }
+        // Drow 123... square
+        // Input number of *, and it will be the square side lenght
+        // For example, the user entered 4, so the output is 1234 
+        // 1234
+        // 1234
+        // 1234
+        // 1234
+        // tester(testCases, expected);
     </script>
 </body>
 </html>

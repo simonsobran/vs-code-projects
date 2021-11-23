@@ -7,9 +7,17 @@
     <title>Binary Number Guessing</title>
 </head>
 <body>
+    <div class="range-value">
+        <h1>Riddle the word</h1>
+        <input type="number" name="" id="min-value" placeholder="put minimum number">
+        <input type="number" name="" id="max-value" placeholder="put maximum number">
+        <input type="button" value="Riddle Fizzle" id="btn-ranger">
+        <span id="tries-txt"></span>
+    </div>
+
     <div class="container">
-        <label for="#num-try">Guess the number</label>
-        <input type="number" placeholder="write num to guess" id="num-try" maxlength="3">
+        <h1 for="#num-try">Guess the number</h1>
+        <input type="number" placeholder="write num to guess" id="num-try">
         <input type="button" value="Try Number" id="btn-guesser">
         <span id="result-txt"></span>
     </div>
@@ -17,21 +25,42 @@
     </div>
     
     <script>
-        var guessNum = Math.floor(Math.random()*100 +1);
         var cnt = 0;
+        var minNum = document.querySelector('#min-value');
+        var maxNum = document.querySelector('#max-value');
+        var btnRanger = document.querySelector('#btn-ranger');
+        var guessNum;
+        var amountOfCount;
+        var numTry; //user try to guess the number
+        
         console.log(guessNum);
         
-        document.querySelector('#btn-guesser').addEventListener('click', function(){
-            var numTry = document.querySelector('#num-try').value;
-            var resultTxt = document.querySelector('#result-txt').innerText;
-            var btn = document.querySelector('#btn-guesser');
-            
+        document.querySelector('#btn-ranger').addEventListener('click', function(){    
+            guessNum = randomInt(minNum.value, maxNum.value);
+            amountOfCount = Math.ceil(Math.log2(guessNum));
+            document.querySelector('#tries-txt').innerText = 'You have ' + amountOfCount + ' tries.';
+            // console.log(guessNum);
+            // console.log(amountOfCount);
+
+            btnRanger.disabled = true;
+        });
+        
+        function randomInt(min, max) { // min and max included 
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        };
+        
+        document.querySelector('#btn-guesser').addEventListener('click', function(){    
+            var resultTxt = document.querySelector('#result-txt').innerText; 
+            var btn = document.querySelector('#btn-guesser'); //action button to guess the number
+            numTry = document.querySelector('#num-try').value;
+            // console.log(numTry);
+            debugger
             if (numTry == '' || numTry == null || numTry == 0 || numTry < 0) {
                 document.querySelector('.log-txt').innerHTML = "Please, put nice numbers from 1 to 100 in this input!"
             } else {
                 cnt++;
                 // console.log(numTry);
-                if (cnt === 9) {
+                if (cnt === amountOfCount) {
                     btn.disabled = true;
                     resultTxt = "You run out of tries, much sad"
                 } else {
@@ -48,8 +77,8 @@
                     if (numTry > guessNum) {
                             resultTxt = "Guessed Number less then you typed";
                         }  
+                    }
                     document.querySelector('.log-txt').innerHTML = `<p>Your ${cnt} try is number ${numTry} and it is ${resultTxt} </p>`;
-                }
             }
 
         });
